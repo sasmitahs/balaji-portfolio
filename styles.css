@@ -48,7 +48,7 @@ strong { font-weight: 600; }
 .menu-toggle { display: none; }
 .profile { display: grid; grid-template-columns: minmax(0, 1fr) 210px; column-gap: 84px; padding-block: 58px 52px; }
 .profile-heading { grid-column: 1; grid-row: 1; }
-.eyebrow, .section-number, .research-note, .timeline-date, .publication-index, .publication-status, .subsection-title { font-family: var(--mono); font-size: 11px; font-weight: 400; }
+.eyebrow, .section-number, .research-note, .publication-index, .publication-status { font-family: var(--mono); font-size: 11px; font-weight: 400; }
 .eyebrow { color: var(--muted); }
 .profile-heading > .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; text-transform: uppercase; }
 .red-rule { display: inline-block; width: 22px; height: 2px; background: var(--red); flex-shrink: 0; }
@@ -66,7 +66,6 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
 .profile-description strong { color: var(--ink); }
 .profile-description p + p { margin-top: 10px; }
 .profile-links { grid-column: 1; grid-row: 3; display: flex; flex-wrap: wrap; gap: 16px 23px; align-items: center; margin-top: 26px; }
-.profile-background { grid-column: 1 / -1; margin-top: 50px; padding-top: 50px; border-top: 1px solid var(--line); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 43px; padding: 11px 17px; border: 1px solid transparent; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: 500; line-height: 1.4; }
 .button-primary { background: var(--red); color: white; }
 .button-primary:hover { background: var(--red-dark); }
@@ -129,22 +128,6 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
 .paper-links { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 27px; margin-top: 17px; }
 .paper-links .text-link { font-size: 11px; }
 .js .bib-link { display: none; }
-.background-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 66px; }
-.subsection-title { color: var(--muted); text-transform: uppercase; margin-bottom: 25px; }
-.timeline { margin: 0; padding: 0; list-style: none; }
-.timeline li { display: grid; grid-template-columns: 126px minmax(0, 1fr); gap: 20px; padding-bottom: 26px; }
-.timeline li + li { border-top: 1px solid var(--line); padding-top: 24px; }
-.timeline li:last-child { padding-bottom: 0; }
-.timeline-date { color: var(--muted); font-size: 10px; padding-top: 4px; }
-.timeline h4, .education h4 { font-size: 15px; line-height: 1.5; font-weight: 500; }
-.position { font-size: 12px; color: var(--ink); margin-top: 3px; }
-.timeline li > div > p:last-child { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.85; }
-.education { border-left: 1px solid var(--line); padding-left: 35px; }
-.education-icon { margin-bottom: 20px; }
-.education-entry .timeline-date { margin-bottom: 8px; }
-.education h4 { font-size: 18px; }
-.education-entry .position { line-height: 1.8; margin-top: 10px; }
-.education-location { color: var(--muted); font-size: 11px; margin-top: 11px; }
 .distinction { border-top: 1px solid var(--line); padding-top: 23px; margin-top: 29px; }
 .distinction .eyebrow { font-size: 10px; text-transform: uppercase; }
 .distinction > p { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-top: 3px; color: var(--red); font-family: var(--serif); font-size: 42px; line-height: 1.3; }
@@ -195,9 +178,6 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .conference-actions { grid-column: 2; justify-self: start; display: flex; gap: 22px; align-items: center; }
   .conference-date { grid-row: 1 / span 2; }
   .conference-copy p { max-width: none; }
-  .background-grid { gap: 35px; grid-template-columns: minmax(0, 1fr) 215px; }
-  .timeline li { grid-template-columns: 100px minmax(0, 1fr); gap: 18px; }
-  .education { padding-left: 25px; }
   .research-grid { gap: 25px; }
   .research-item + .research-item { padding-left: 24px; }
   .contact-inner { gap: 35px; }
@@ -219,12 +199,13 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .profile-heading > .eyebrow { font-size: 9px; margin-bottom: 20px; }
   h1 { font-size: 65px; line-height: 1.02; }
   .role { margin-top: 15px; font-size: 12px; }
-  .profile-description { grid-column: 1; grid-row: 2; font-size: 14px; line-height: 1.8; margin-top: 22px; }
+  .profile-description { display: contents; font-size: 14px; line-height: 1.8; color: var(--muted); }
+  .profile-description > p:first-child { grid-column: 1; grid-row: 2; margin-top: 22px; }
+  .profile-description > p:last-child { grid-column: 1 / -1; grid-row: 3; margin-top: 20px; }
   .profile-portrait { grid-column: 2; grid-row: 2; margin-top: 25px; }
   .profile-portrait > img { width: 145px; }
   .profile-portrait figcaption { font-size: 9px; }
-  .profile-links { grid-column: 1 / -1; margin-top: 24px; gap: 12px 23px; }
-  .profile-background { margin-top: 40px; padding-top: 40px; }
+  .profile-links { grid-column: 1 / -1; grid-row: 4; margin-top: 24px; gap: 12px 23px; }
   .conference-inner { grid-template-columns: 167px minmax(0, 1fr); gap: 13px 22px; padding-block: 24px; }
   .conference-date { padding-right: 18px; }
   .conference-year { font-size: 29px; }
@@ -249,16 +230,6 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .publication { grid-template-columns: 1fr; gap: 18px; padding-top: 22px; }
   .publication-index { flex-direction: row; align-items: center; gap: 15px; padding: 0; }
   .publication-content h3 { font-size: 27px; }
-  .background-grid { grid-template-columns: 1fr; gap: 35px; }
-  .timeline li { grid-template-columns: 100px minmax(0, 1fr); gap: 22px; }
-  .education { display: grid; grid-template-columns: 1fr; gap: 0 30px; border-left: 0; border-top: 1px solid var(--line); padding: 30px 0 0; }
-  .education .subsection-title { grid-column: 1 / -1; }
-  .education-entry { grid-column: 1; }
-  .education-icon { display: none; }
-  .distinction { grid-column: 2; border-top: 0; border-left: 1px solid var(--line); margin-top: 0; padding: 0 0 0 24px; }
-  .education h4 { font-size: 16px; }
-  .distinction > p { display: block; font-size: 40px; }
-  .distinction > p > span { display: block; font-size: 10px; }
   .contact-inner { flex-direction: column; align-items: flex-start; gap: 25px; padding-block: 40px; }
   .contact-inner h2 { font-size: 36px; }
   .site-footer { align-items: flex-start; padding-block: 23px; gap: 18px; }
@@ -276,7 +247,7 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .role { font-size: 11px; }
   .role span { margin-inline: 3px; }
   .profile-description { font-size: 12px; line-height: 1.85; margin-top: 20px; }
-  .profile-description p + p { margin-top: 11px; }
+  .profile-description > p:last-child { margin-top: 18px; }
   .profile-portrait { margin-top: 24px; }
   .profile-portrait > img { width: 105px; }
   .profile-portrait figcaption { font-size: 8px; gap: 5px; }
@@ -298,10 +269,6 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .publication-content h3 { font-size: 25px; }
   .authors { font-size: 12px; }
   .publication-venue { font-size: 10px; }
-  .timeline li { grid-template-columns: 1fr; gap: 8px; }
-  .timeline h4 { font-size: 15px; }
-  .timeline-date { font-size: 10px; }
-  .timeline li > div > p:last-child { font-size: 12px; }
   .dialog-heading h2 { font-size: 28px; }
   .citation-dialog pre { font-size: 10px; padding: 13px; }
   .dialog-actions { gap: 12px; }
@@ -324,8 +291,6 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .wordmark-name { font-size: 11px; }
   #primary-nav { gap: 8px; }
   .nav-link { font-size: 11px; }
-  .education { gap: 0 16px; }
-  .distinction { padding-left: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
