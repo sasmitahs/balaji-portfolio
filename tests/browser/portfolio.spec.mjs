@@ -140,6 +140,10 @@ test('public academic claims and links stay consistent', async ({ page }) => {
   await expect(page.locator('.conference-copy')).toContainText('presenting in person');
   await expect(page.locator('#contact, .distinction, a[href="#contact"]')).toHaveCount(0);
   await expect(page.locator('main')).not.toContainText(/JEE Advanced|All India Rank|\b225\b|Get in touch|talk research|Always up for a conversation|student researcher|student coordinator/i);
+  await expect(page.locator('#about > #background')).toBeVisible();
+  await expect(page.locator('main > #background')).toHaveCount(0);
+  await expect(page.locator('a[href*="scholar.google.com/citations"]')).toHaveCount(1);
+  await expect(page.locator('a[href*="linkedin.com/in/balaji-ram"]')).toHaveCount(1);
   await expect(page.locator('.education')).toContainText('Indian Institute');
   const structuredData = await page.locator('script[type="application/ld+json"]').textContent();
   expect(JSON.parse(structuredData).name).toBe('Balaji Ramachandran');

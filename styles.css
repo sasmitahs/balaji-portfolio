@@ -66,6 +66,7 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
 .profile-description strong { color: var(--ink); }
 .profile-description p + p { margin-top: 10px; }
 .profile-links { grid-column: 1; grid-row: 3; display: flex; flex-wrap: wrap; gap: 16px 23px; align-items: center; margin-top: 26px; }
+.profile-background { grid-column: 1 / -1; margin-top: 50px; padding-top: 50px; border-top: 1px solid var(--line); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 43px; padding: 11px 17px; border: 1px solid transparent; border-radius: 4px; text-decoration: none; font-size: 12px; font-weight: 500; line-height: 1.4; }
 .button-primary { background: var(--red); color: white; }
 .button-primary:hover { background: var(--red-dark); }
@@ -223,6 +224,7 @@ h1 { font-family: var(--serif); font-size: 78px; line-height: 0.98; font-weight:
   .profile-portrait > img { width: 145px; }
   .profile-portrait figcaption { font-size: 9px; }
   .profile-links { grid-column: 1 / -1; margin-top: 24px; gap: 12px 23px; }
+  .profile-background { margin-top: 40px; padding-top: 40px; }
   .conference-inner { grid-template-columns: 167px minmax(0, 1fr); gap: 13px 22px; padding-block: 24px; }
   .conference-date { padding-right: 18px; }
   .conference-year { font-size: 29px; }
