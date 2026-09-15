@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /cv.html
+Sitemap: https://sasmitahs.github.io/balaji-portfolio/sitemap.xml

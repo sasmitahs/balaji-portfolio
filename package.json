@@ -1,0 +1,22 @@
+{
+  "name": "balaji-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Academic website of Balaji Ramachandran",
+  "type": "module",
+  "scripts": {
+    "prepare:portrait": "node scripts/prepare-portrait.mjs",
+    "prepare:icons": "node scripts/prepare-icons.mjs",
+    "export:cv": "node scripts/export-cv.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "lucide-static": "^1.42.0",
+    "sharp": "^0.35.4"
+  }
+}

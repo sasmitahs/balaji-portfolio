@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Balaji Ramachandran//Academic Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cdc-2026@balaji-portfolio.sasmitahs.github.io
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261219
+SUMMARY:IEEE CDC 2026 - Honolulu
+LOCATION:Hilton Hawaiian Village\, Honolulu\, Hawaii\, USA
+DESCRIPTION:65th IEEE Conference on Decision and Control.
+ Balaji Ramachandran will present in person and is open to meeting.
+ Individual presentation time is not yet listed on this website.
+URL:https://cdc2026.ieeecss.org/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
