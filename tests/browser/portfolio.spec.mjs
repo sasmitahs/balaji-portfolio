@@ -144,7 +144,7 @@ test('public academic claims and links stay consistent', async ({ page }) => {
   await expect(page.locator('main')).not.toContainText(/03 \/ Background|Along the way|Research & experience/);
   const introduction = page.locator('.profile-description');
   await expect(introduction).toContainText('mathematical finance');
-  await expect(introduction).toContainText('Mathematics and Computer Science at IISc');
+  await expect(introduction).toContainText('a BTech in Mathematics and Computer Science at IISc');
   await expect(introduction).toContainText('research at Purdue');
   await expect(introduction).toContainText('quantitative risk work at HSBC');
   await expect(introduction).toContainText('FRTB stress scenarios');
