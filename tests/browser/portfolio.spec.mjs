@@ -138,7 +138,9 @@ test('public academic claims and links stay consistent', async ({ page }) => {
   await openPortfolio(page);
   await expect(page.locator('.role')).toContainText('Carnegie Mellon University');
   await expect(page.locator('.conference-copy')).toContainText('presenting in person');
-  await expect(page.locator('.contact-conference')).toContainText('CDC 2026 in person');
+  await expect(page.locator('#contact, .distinction, a[href="#contact"]')).toHaveCount(0);
+  await expect(page.locator('main')).not.toContainText(/JEE Advanced|All India Rank|\b225\b|Get in touch|talk research|Always up for a conversation|student researcher|student coordinator/i);
+  await expect(page.locator('.education')).toContainText('Indian Institute');
   const structuredData = await page.locator('script[type="application/ld+json"]').textContent();
   expect(JSON.parse(structuredData).name).toBe('Balaji Ramachandran');
   expect(JSON.parse(structuredData).affiliation.name).toBe('Carnegie Mellon University');
@@ -147,4 +149,6 @@ test('public academic claims and links stay consistent', async ({ page }) => {
   await page.goto(new URL('../../cv.html', import.meta.url).href);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Balaji Ramachandran');
   await expect(page.locator('main')).toContainText('Accepted at the 65th IEEE Conference');
+  await expect(page.locator('main')).not.toContainText(/JEE Advanced|All India Rank|\b225\b|Distinctions|student researcher|student coordinator/i);
+  await expect(page.getByRole('heading', { name: 'Indian Institute of Science', exact: true })).toBeVisible();
 });
